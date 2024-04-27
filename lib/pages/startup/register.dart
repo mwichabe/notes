@@ -84,13 +84,19 @@ class _RegisterState extends State<Register> {
                 const SizedBox(
                   height: 20,
                 ),
-                GestureDetector(
-                  onTap: _launchPrivacyPolicy,
-                  child: const Center(
-                      child: Text(
-                    'Terms and Condition',
-                    style: TextStyle(color: Colors.blue),
-                  )),
+                Row(
+                  
+                  children: [
+                    const Text('By using this app you agree to our'),
+                    GestureDetector(
+                      onTap: _launchPrivacyPolicy,
+                      child: const Center(
+                          child: Text(
+                        '  Privacy Policy ',
+                        style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+                      )),
+                    ),
+                  ],
                 ),
                 Padding(
                   padding: const EdgeInsets.all(38.0),
