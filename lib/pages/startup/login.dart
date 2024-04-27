@@ -17,6 +17,7 @@ class _LogInState extends State<LogIn> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Container(
+        height: double.infinity,
         decoration: const BoxDecoration(
         image: DecorationImage(
         image: AssetImage('assets/background.jpg'),
@@ -28,7 +29,7 @@ class _LogInState extends State<LogIn> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const Padding(
+                 const Padding(
                   padding: EdgeInsets.all(38.0),
                   child: Center(
                     child: Text(
@@ -38,15 +39,24 @@ class _LogInState extends State<LogIn> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(28.0),
+                  padding:  const EdgeInsets.all(28.0),
                   child: SizedBox(
-                    child: Image.asset(
-                      'assets/logo.png',
-                      height: 50,
-                      width: 50,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
+  child: ClipRRect(
+    borderRadius: BorderRadius.circular(50.0),
+    child: Container(
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.grey, width: 1.0),
+        borderRadius: BorderRadius.circular(8.0),
+      ),
+      child: Image.asset(
+        'assets/logo.png',
+        height: 180,
+        //width: 70,
+        fit: BoxFit.contain,
+      ),
+    ),
+  ),
+),
                 ),
                 const CustomTextField(
                     formLabel: "example@xyz.com", obscureText: false),
