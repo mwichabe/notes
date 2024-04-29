@@ -19,44 +19,69 @@ class _LogInState extends State<LogIn> {
       body: Container(
         height: double.infinity,
         decoration: const BoxDecoration(
-        image: DecorationImage(
-        image: AssetImage('assets/background.jpg'),
-        fit: BoxFit.cover
+          image: DecorationImage(
+              image: AssetImage('assets/background.jpg'), fit: BoxFit.cover),
         ),
-      ),
         child: Padding(
           padding: const EdgeInsets.all(18.0),
           child: SingleChildScrollView(
             child: Column(
               children: [
-                 const Padding(
+                const Padding(
                   padding: EdgeInsets.all(38.0),
                   child: Center(
                     child: Text(
                       'My Notes',
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 38),
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 38),
                     ),
                   ),
                 ),
                 Padding(
-                  padding:  const EdgeInsets.all(28.0),
-                  child: SizedBox(
-  child: ClipRRect(
-    borderRadius: BorderRadius.circular(50.0),
-    child: Container(
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey, width: 1.0),
-        borderRadius: BorderRadius.circular(8.0),
-      ),
-      child: Image.asset(
-        'assets/logo.png',
-        height: 180,
-        //width: 70,
-        fit: BoxFit.contain,
-      ),
-    ),
-  ),
-),
+                  padding: const EdgeInsets.all(28.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                       SizedBox(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.grey, width: 1.0),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            child: Image.asset(
+                              'assets/logo1.png',
+                              height: 70,
+                              width: 70,
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        ///////////////////////////////////////////////////////////
+                        width: 3,
+                      ),
+                      SizedBox(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.grey, width: 1.0),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            child: Image.asset(
+                              'assets/logo.png',
+                              height: 70,
+                              width: 70,
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 const CustomTextField(
                     formLabel: "example@xyz.com", obscureText: false),
@@ -80,7 +105,7 @@ class _LogInState extends State<LogIn> {
                       },
                       child: const Text(
                         'Forgot Password ?',
-                        style: TextStyle(color: Colors.blue),
+                        style: TextStyle(color: Colors.white),
                       ),
                     ),
                   ],
@@ -99,12 +124,14 @@ class _LogInState extends State<LogIn> {
                 Center(
                   child: GestureDetector(
                       onTap: () {
-                        Navigator.pushReplacement(context,
-                            MaterialPageRoute(builder: (context) => const Register()));
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Register()));
                       },
                       child: const Text(
                         'Not a member? Register Now',
-                        style: TextStyle(color: Colors.blue),
+                        style: TextStyle(color: Colors.white),
                       )),
                 )
               ],

@@ -46,22 +46,48 @@ class _RegisterState extends State<Register> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(28.0),
-                  child: SizedBox(
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(50.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.grey, width: 1.0),
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        child: Image.asset(
-                          'assets/logo.png',
-                          height: 180,
-                          //width: 70,
-                          fit: BoxFit.contain,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                       SizedBox(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.grey, width: 1.0),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            child: Image.asset(
+                              'assets/logo1.png',
+                              height: 70,
+                              width: 70,
+                              fit: BoxFit.contain,
+                            ),
+                          ),
                         ),
                       ),
-                    ),
+                      const SizedBox(
+                        ///////////////////////////////////////////////////////////
+                        width: 3,
+                      ),
+                      SizedBox(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.grey, width: 1.0),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            child: Image.asset(
+                              'assets/logo.png',
+                              height: 70,
+                              width: 70,
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 const CustomTextField(
@@ -75,25 +101,25 @@ class _RegisterState extends State<Register> {
                   height: 20,
                 ),
                 const CustomTextField(
-                    formLabel: "Enter your password", obscureText: false),
+                    formLabel: "Enter your password", obscureText: true),
                 const SizedBox(
                   height: 20,
                 ),
                 const CustomTextField(
-                    formLabel: "Confrim your password", obscureText: false),
+                    formLabel: "Confrim your password", obscureText: true),
                 const SizedBox(
                   height: 20,
                 ),
                 Row(
                   
                   children: [
-                    const Text('By using this app you agree to our'),
+                    const Text('By using this app you agree to our',style: TextStyle(color: Colors.white),),
                     GestureDetector(
                       onTap: _launchPrivacyPolicy,
                       child: const Center(
                           child: Text(
                         '  Privacy Policy ',
-                        style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+                        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                       )),
                     ),
                   ],
@@ -116,7 +142,7 @@ class _RegisterState extends State<Register> {
                       },
                       child: const Text(
                         'Already a member? Login',
-                        style: TextStyle(color: Colors.blue),
+                        style: TextStyle(color: Colors.white),
                       )),
                 )
               ],
